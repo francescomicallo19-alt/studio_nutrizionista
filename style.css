@@ -1,0 +1,722 @@
+/* ==========================================================================
+   RESET & VARIABILI GLOBALI (PALETTE CLINICA SALVIA & AVORIO)
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Tonalità primarie istituzionali e mediche */
+  --primary-deep: #142a20;      /* Verde salvia scuro per titoli e risalto */
+  --primary: #1e3d30;           /* Colore principale accenti e navbar */
+  --primary-accent: #2e604c;    /* Hover pulsanti e dettagli */
+  --accent-light: #52b788;      /* Verde chiaro per badge e icone */
+  
+  /* Sfondi caldi e luminosi */
+  --bg-page: #fbfbf9;           /* Avorio chiarissimo, riposante */
+  --bg-surface: #ffffff;        /* Bianco puro per card e form */
+  --bg-subtle: #f2f5f2;         /* Grigio-salvia chiarissimo per sezioni alternate */
+  
+  /* Contrasti del testo */
+  --text-main: #1f2937;         /* Testo corpo leggibile */
+  --text-muted: #52605b;        /* Testo secondario ed etichette */
+  --border-color: #e5e9e6;      /* Bordi sottili ed eleganti */
+  
+  /* Tipografia */
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(251, 251, 249, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-deep);
+  letter-spacing: -0.01em;
+}
+
+.brand-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--primary-deep);
+}
+
+.nav-cta-btn {
+  background: var(--primary-deep) !important;
+  color: #fff !important;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.88rem !important;
+  transition: all 0.2s !important;
+}
+
+.nav-cta-btn:hover {
+  background: var(--primary-accent) !important;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  padding: 80px 0 60px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(46, 96, 76, 0.08);
+  border: 1px solid rgba(46, 96, 76, 0.2);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary-deep);
+  margin-bottom: 20px;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-light);
+  border-radius: 50%;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 4vw, 3.2rem);
+  line-height: 1.2;
+  color: var(--primary-deep);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-desc {
+  font-size: 1.08rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary-deep);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-accent);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  color: var(--primary-deep);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-subtle);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.hero-reassurance {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.reassurance-icon {
+  color: var(--primary-accent);
+  font-weight: 800;
+}
+
+/* CARD PROFILO HERO */
+.profile-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.avatar-ph {
+  width: 58px;
+  height: 58px;
+  background: var(--bg-subtle);
+  border: 2px solid var(--primary-deep);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-deep);
+}
+
+.profile-header h3 {
+  font-size: 1.15rem;
+  color: var(--primary-deep);
+  font-weight: 700;
+}
+
+.profile-header p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.quote-box {
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--primary-accent);
+  padding: 16px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--primary-deep);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.credentials-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SEZIONI COMUNI
+   ========================================================================== */
+.section {
+  padding: 85px 0;
+}
+
+.section-light {
+  background-color: var(--bg-subtle);
+}
+
+.section-head {
+  margin-bottom: 48px;
+}
+
+.section-head.text-center {
+  text-align: center;
+}
+
+.section-head.text-center .section-subtitle {
+  margin: 0 auto;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary-accent);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+  color: var(--primary-deep);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 650px;
+}
+
+/* ==========================================================================
+   PERCORSI / SERVIZI
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  color: var(--primary-deep);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.service-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.card-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-accent);
+  background: rgba(46, 96, 76, 0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+/* ==========================================================================
+   METODO IN 3 PASSI
+   ========================================================================== */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.method-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 36px 28px;
+}
+
+.step-num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-accent);
+  margin-bottom: 12px;
+}
+
+.method-card h3 {
+  font-size: 1.2rem;
+  color: var(--primary-deep);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.method-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   TARIFFE TRASPARENTI
+   ========================================================================== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pricing-card.featured {
+  border-color: var(--primary-deep);
+  box-shadow: 0 12px 35px rgba(20, 42, 32, 0.08);
+}
+
+.featured-ribbon {
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: var(--primary-deep);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.pricing-card h3 {
+  font-size: 1.45rem;
+  color: var(--primary-deep);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.pricing-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.price {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.price-val {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--primary-deep);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.price-tax {
+  font-size: 0.8rem;
+  color: var(--primary-accent);
+  font-weight: 600;
+}
+
+.pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  flex-grow: 1;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ==========================================================================
+   PRENOTAZIONE E MODULO
+   ========================================================================== */
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+}
+
+.booking-info h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--primary-deep);
+  margin: 10px 0 16px 0;
+  line-height: 1.25;
+}
+
+.booking-info > p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  margin-bottom: 32px;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact-row .icon {
+  font-size: 1.3rem;
+  margin-top: 2px;
+}
+
+.contact-row strong {
+  display: block;
+  color: var(--primary-deep);
+  font-size: 0.95rem;
+}
+
+.contact-row p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.wa-link {
+  color: #1b8a53;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.wa-link:hover {
+  text-decoration: underline;
+}
+
+/* MODULO */
+.booking-form-wrapper {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-deep);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-page);
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-deep);
+  background-color: #fff;
+}
+
+.privacy-note {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding: 40px 0;
+  background: #fff;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-legal {
+  font-size: 0.76rem;
+  margin-top: 4px;
+  opacity: 0.85;
+}
+
+.footer-copy a {
+  color: var(--primary-deep);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-copy a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MOBILE FIRST QUERY)
+   ========================================================================== */
+@media (max-width: 820px) {
+  .nav-links a:not(.nav-cta-btn) {
+    display: none;
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
